@@ -10,11 +10,11 @@ import javax.swing.JPanel;
  */
 public class Campo extends JPanel {
     private String cor;
+    private Peca peca;
     
     public Campo(String cor) {
         this.cor = cor;
-        this.setBounds(0, 0, 70, 70);
-        this.setBackground(Color.black);
+        this.peca = null;
     }
 
 }
