@@ -16,9 +16,13 @@ import javax.swing.JPanel;
 public class Tabuleiro {
 
     private JPanel tabuleiro[][];
+    private int x;
+    private int y;
 
     public Tabuleiro(JFrame frame, int x, int y, int tamanho) {
         this.tabuleiro = new JPanel[9][9];
+        this.x = x;
+        this.y = y;
         criarTabuleiro(frame, x, y, tamanho);
     }
 
@@ -27,6 +31,27 @@ public class Tabuleiro {
         Branco - F1EEBD ~ 241 238 189
         Preto - AC865A ~ 172 134 90
      */
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public JPanel[][] getTabuleiro() {
+        return tabuleiro;
+    }
+
     public void criarTabuleiro(JFrame frame, int x, int y, int tamanho) {
         int auxLinha, auxColuna;
 
