@@ -5,6 +5,7 @@
  */
 package controller;
 
+import javax.swing.JFrame;
 import model.Tabuleiro;
 
 /**
@@ -14,8 +15,8 @@ import model.Tabuleiro;
 public class TabuleiroController {
     private Tabuleiro tabuleiro;
     
-    public TabuleiroController() {
-        this.tabuleiro = new Tabuleiro();
+    public TabuleiroController(JFrame frame, int x, int y, int tamanho) {
+        this.tabuleiro = new Tabuleiro(frame, x, y, tamanho);
     }
 
     public Tabuleiro getTabuleiro() {
