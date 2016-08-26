@@ -5,9 +5,7 @@
  */
 package view;
 
-import java.awt.Color;
-import javax.swing.JPanel;
-import model.Campo;
+import controller.TabuleiroController;
 
 /**
  *
@@ -19,11 +17,11 @@ public class telaPrincipal extends javax.swing.JFrame {
      * Creates new form Tabuleiro
      */
  
-
+    TabuleiroController tabuleiroController;
     public telaPrincipal() {
         initComponents();
 
-
+        tabuleiroController = new TabuleiroController(this, 100, 100, 60);
     }
 
     /**
