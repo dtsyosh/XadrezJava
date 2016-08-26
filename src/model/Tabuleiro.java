@@ -17,8 +17,9 @@ public class Tabuleiro {
 
     private JPanel tabuleiro[][];
 
-    public Tabuleiro() {
+    public Tabuleiro(JFrame frame, int x, int y, int tamanho) {
         this.tabuleiro = new JPanel[9][9];
+        criarTabuleiro(frame, x, y, tamanho);
     }
 
     /* Cores:
@@ -36,24 +37,24 @@ public class Tabuleiro {
         for (int linha = 0; linha < tamanho * 8; linha += tamanho) {
             for (int coluna = 0; coluna < tamanho * 8; coluna += tamanho) {
                 if (auxLinha % 2 == 0) {   //Se a linha for impar, primeiro campo é preto
-                    tabuleiro[auxLinha][auxColuna] = new Campo("preto");
+                    this.tabuleiro[auxLinha][auxColuna] = new Campo("preto");
                     //Define tamanho dos blocos e sua localização
-                    tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
                     if (auxColuna % 2 == 0) {
-                        tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
+                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
                     } else {
-                        tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
+                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
                     }
-                    frame.add(tabuleiro[auxLinha][auxColuna]);
+                    frame.add(this.tabuleiro[auxLinha][auxColuna]);
                 } else {
-                    tabuleiro[auxLinha][auxColuna] = new Campo("branco");
-                    tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    this.tabuleiro[auxLinha][auxColuna] = new Campo("branco");
+                    this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
                     if (auxColuna % 2 == 0) {
-                        tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
+                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
                     } else {
-                        tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
+                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
                     }
-                    frame.add(tabuleiro[auxLinha][auxColuna]);
+                    frame.add(this.tabuleiro[auxLinha][auxColuna]);
                 }
                 auxColuna++;
             }
