@@ -6,6 +6,7 @@
 package view;
 
 import controller.TabuleiroController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,12 +17,12 @@ public class telaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form Tabuleiro
      */
- 
     TabuleiroController tabuleiroController;
+
     public telaPrincipal() {
         initComponents();
 
-        tabuleiroController = new TabuleiroController(this, 100, 100, 60);
+        tabuleiroController = new TabuleiroController(this, 240, 10, 60);
     }
 
     /**
@@ -34,6 +35,12 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -47,14 +54,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        int tabX = tabuleiroController.getTabuleiro().getX();
+        int tabY = tabuleiroController.getTabuleiro().getY();
+        int x = evt.getX();
+        int y = evt.getY();
+        int coluna = x - tabX - 5;
+        int linha = y - tabY - 30;
+        int tamanho = tabuleiroController.getTabuleiro().getTamanho();
+ //       System.out.printf("X = %d Y = %d | tabX = %d tabY = %d | tamanho = %d\n", x, y, tabX, tabY, tamanho);
+        System.out.printf("matriz[%d][%d]\n", (linha / 60) + 1, (coluna / 60) + 1);
+    }//GEN-LAST:event_formMouseClicked
 
     /**
      * @param args the command line arguments
      */
-
-
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
