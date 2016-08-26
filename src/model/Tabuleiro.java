@@ -18,19 +18,29 @@ public class Tabuleiro {
     private JPanel tabuleiro[][];
     private int x;
     private int y;
+    private int tamanho;
 
     public Tabuleiro(JFrame frame, int x, int y, int tamanho) {
         this.tabuleiro = new JPanel[9][9];
         this.x = x;
         this.y = y;
+        this.tamanho = tamanho;
         criarTabuleiro(frame, x, y, tamanho);
     }
 
+    
+    public int getTamanho() {
+        return tamanho;
+    }
+
     /* Cores:
-        Selecionado - C2C045 ~ 194 192 69
-        Branco - F1EEBD ~ 241 238 189
-        Preto - AC865A ~ 172 134 90
+    Selecionado - C2C045 ~ 194 192 69
+    Branco - F1EEBD ~ 241 238 189
+    Preto - AC865A ~ 172 134 90
      */
+    public void setTamanho(int tamanho) {    
+        this.tamanho = tamanho;
+    }
 
     public int getX() {
         return x;
