@@ -33,7 +33,7 @@ public class Tabuleiro {
         //Variáveis auxiliares que indicam a linha e a coluna do bloco
         auxLinha = auxColuna = 1;
         //Variaveis que indicam o ponto inicial de onde o tabuleiro deve ser criado
-        x = y = 50;
+
         for (int linha = 0; linha < tamanho * 8; linha += tamanho) {
             for (int coluna = 0; coluna < tamanho * 8; coluna += tamanho) {
                 if (auxLinha % 2 == 0) {   //Se a linha for impar, primeiro campo é preto
