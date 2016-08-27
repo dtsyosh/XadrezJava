@@ -6,6 +6,7 @@
 package view;
 
 import controller.TabuleiroController;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +22,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     public telaPrincipal() {
         initComponents();
-
-        tabuleiroController = new TabuleiroController(this, 240, 10, 60);
+        getContentPane().setBackground(Color.gray);
+        tabuleiroController = new TabuleiroController(painelTabuleiro, 1, 1, 60);
+        lblLetras.setVisible(false);
     }
 
     /**
@@ -34,40 +36,177 @@ public class telaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblLetras = new javax.swing.JLabel();
+        painelEsquerdo = new javax.swing.JPanel();
+        spCemiterioBranco = new javax.swing.JScrollPane();
+        listCemiterioBranco = new javax.swing.JList<>();
+        lblCimiterioBranco = new javax.swing.JLabel();
+        lblJogador1 = new javax.swing.JLabel();
+        btnDesistirJ1 = new javax.swing.JButton();
+        painelDireito = new javax.swing.JPanel();
+        spCemiterioPreto = new javax.swing.JScrollPane();
+        listCemiterioPreto = new javax.swing.JList<>();
+        lblCemiterioPreto = new javax.swing.JLabel();
+        lblJogador2 = new javax.swing.JLabel();
+        btnDesistirJ2 = new javax.swing.JButton();
+        painelTabuleiro = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Xadrez");
         setResizable(false);
-        addMouseListener(new java.awt.event.MouseAdapter() {
+        setSize(new java.awt.Dimension(970, 520));
+
+        lblLetras.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 12)); // NOI18N
+        lblLetras.setText("a             b             c             d             e             f              g             h");
+
+        painelEsquerdo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        painelEsquerdo.setPreferredSize(new java.awt.Dimension(226, 573));
+
+        listCemiterioBranco.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        spCemiterioBranco.setViewportView(listCemiterioBranco);
+
+        lblCimiterioBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCimiterioBranco.setText("Cemitério");
+
+        lblJogador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblJogador1.setText("Jogador 1");
+
+        btnDesistirJ1.setText("Desistir");
+
+        javax.swing.GroupLayout painelEsquerdoLayout = new javax.swing.GroupLayout(painelEsquerdo);
+        painelEsquerdo.setLayout(painelEsquerdoLayout);
+        painelEsquerdoLayout.setHorizontalGroup(
+            painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(spCemiterioBranco)
+            .addComponent(lblCimiterioBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblJogador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelEsquerdoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnDesistirJ1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelEsquerdoLayout.setVerticalGroup(
+            painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEsquerdoLayout.createSequentialGroup()
+                .addComponent(lblJogador1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
+                .addComponent(btnDesistirJ1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCimiterioBranco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spCemiterioBranco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        painelDireito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        painelDireito.setPreferredSize(new java.awt.Dimension(226, 226));
+
+        listCemiterioPreto.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        spCemiterioPreto.setViewportView(listCemiterioPreto);
+
+        lblCemiterioPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCemiterioPreto.setText("Cemitério");
+
+        lblJogador2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblJogador2.setText("Jogador 2");
+
+        btnDesistirJ2.setText("Desistir");
+
+        javax.swing.GroupLayout painelDireitoLayout = new javax.swing.GroupLayout(painelDireito);
+        painelDireito.setLayout(painelDireitoLayout);
+        painelDireitoLayout.setHorizontalGroup(
+            painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(spCemiterioPreto)
+            .addComponent(lblCemiterioPreto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblJogador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelDireitoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnDesistirJ2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelDireitoLayout.setVerticalGroup(
+            painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDireitoLayout.createSequentialGroup()
+                .addComponent(lblJogador2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
+                .addComponent(btnDesistirJ2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCemiterioPreto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spCemiterioPreto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        painelTabuleiro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        painelTabuleiro.setPreferredSize(new java.awt.Dimension(482, 482));
+        painelTabuleiro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                formMouseClicked(evt);
+                painelTabuleiroMouseClicked(evt);
             }
         });
+
+        javax.swing.GroupLayout painelTabuleiroLayout = new javax.swing.GroupLayout(painelTabuleiro);
+        painelTabuleiro.setLayout(painelTabuleiroLayout);
+        painelTabuleiroLayout.setHorizontalGroup(
+            painelTabuleiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+        painelTabuleiroLayout.setVerticalGroup(
+            painelTabuleiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 952, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(painelEsquerdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(painelTabuleiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(painelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addComponent(lblLetras)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelEsquerdo, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelTabuleiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelDireito, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(lblLetras, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        int tabX = tabuleiroController.getTabuleiro().getX();
-        int tabY = tabuleiroController.getTabuleiro().getY();
+    private void painelTabuleiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelTabuleiroMouseClicked
+        int tabX = tabuleiroController.getTabuleiro().getX();   //Coordenada de criação do tabuleiro
+        int tabY = tabuleiroController.getTabuleiro().getY();   //Coordenada de criação do tabuleiro
         int x = evt.getX();
         int y = evt.getY();
-        int coluna = x - tabX - 5;
-        int linha = y - tabY - 30;
         int tamanho = tabuleiroController.getTabuleiro().getTamanho();
- //       System.out.printf("X = %d Y = %d | tabX = %d tabY = %d | tamanho = %d\n", x, y, tabX, tabY, tamanho);
-        System.out.printf("matriz[%d][%d]\n", (linha / 60) + 1, (coluna / 60) + 1);
-    }//GEN-LAST:event_formMouseClicked
+
+        int coluna = ((x - tabX) / tamanho) + 1;    //Pega a coluna clicada
+        int linha = ((y - tabY) / tamanho) + 1;     //Pega a linha clicada
+        System.out.printf("matriz[%d][%d]\n", linha, coluna);
+    }//GEN-LAST:event_painelTabuleiroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -106,5 +245,19 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDesistirJ1;
+    private javax.swing.JButton btnDesistirJ2;
+    private javax.swing.JLabel lblCemiterioPreto;
+    private javax.swing.JLabel lblCimiterioBranco;
+    private javax.swing.JLabel lblJogador1;
+    private javax.swing.JLabel lblJogador2;
+    private javax.swing.JLabel lblLetras;
+    private javax.swing.JList<String> listCemiterioBranco;
+    private javax.swing.JList<String> listCemiterioPreto;
+    private javax.swing.JPanel painelDireito;
+    private javax.swing.JPanel painelEsquerdo;
+    private javax.swing.JPanel painelTabuleiro;
+    private javax.swing.JScrollPane spCemiterioBranco;
+    private javax.swing.JScrollPane spCemiterioPreto;
     // End of variables declaration//GEN-END:variables
 }
