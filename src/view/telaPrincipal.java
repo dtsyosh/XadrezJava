@@ -36,15 +36,15 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         painelEsquerdo = new javax.swing.JPanel();
-        spCemiterioBranco = new javax.swing.JScrollPane();
+        spPecasCapBranco = new javax.swing.JScrollPane();
         listCemiterioBranco = new javax.swing.JList<>();
-        lblCimiterioBranco = new javax.swing.JLabel();
+        lblPecasCapBranco = new javax.swing.JLabel();
         lblJogador1 = new javax.swing.JLabel();
         btnDesistirJ1 = new javax.swing.JButton();
         painelDireito = new javax.swing.JPanel();
-        spCemiterioPreto = new javax.swing.JScrollPane();
+        spPecasCapPreto = new javax.swing.JScrollPane();
         listCemiterioPreto = new javax.swing.JList<>();
-        lblCemiterioPreto = new javax.swing.JLabel();
+        lblPecasCapPreto = new javax.swing.JLabel();
         lblJogador2 = new javax.swing.JLabel();
         btnDesistirJ2 = new javax.swing.JButton();
         painelTabuleiro = new javax.swing.JPanel();
@@ -62,10 +62,10 @@ public class telaPrincipal extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        spCemiterioBranco.setViewportView(listCemiterioBranco);
+        spPecasCapBranco.setViewportView(listCemiterioBranco);
 
-        lblCimiterioBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCimiterioBranco.setText("Cemitério");
+        lblPecasCapBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPecasCapBranco.setText("Peças Capturadas");
 
         lblJogador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblJogador1.setText("Jogador 1");
@@ -76,24 +76,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         painelEsquerdo.setLayout(painelEsquerdoLayout);
         painelEsquerdoLayout.setHorizontalGroup(
             painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spCemiterioBranco)
-            .addComponent(lblCimiterioBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(spPecasCapBranco)
+            .addComponent(lblPecasCapBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblJogador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelEsquerdoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnDesistirJ1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(btnDesistirJ1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                 .addContainerGap())
         );
         painelEsquerdoLayout.setVerticalGroup(
             painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEsquerdoLayout.createSequentialGroup()
                 .addComponent(lblJogador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
                 .addComponent(btnDesistirJ1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCimiterioBranco)
+                .addComponent(lblPecasCapBranco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spCemiterioBranco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(spPecasCapBranco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         painelDireito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -104,10 +104,10 @@ public class telaPrincipal extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        spCemiterioPreto.setViewportView(listCemiterioPreto);
+        spPecasCapPreto.setViewportView(listCemiterioPreto);
 
-        lblCemiterioPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCemiterioPreto.setText("Cemitério");
+        lblPecasCapPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPecasCapPreto.setText("Peças Capturadas");
 
         lblJogador2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblJogador2.setText("Jogador 2");
@@ -118,24 +118,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         painelDireito.setLayout(painelDireitoLayout);
         painelDireitoLayout.setHorizontalGroup(
             painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spCemiterioPreto)
-            .addComponent(lblCemiterioPreto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(spPecasCapPreto)
+            .addComponent(lblPecasCapPreto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblJogador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelDireitoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnDesistirJ2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(btnDesistirJ2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                 .addContainerGap())
         );
         painelDireitoLayout.setVerticalGroup(
             painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDireitoLayout.createSequentialGroup()
                 .addComponent(lblJogador2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
                 .addComponent(btnDesistirJ2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCemiterioPreto)
+                .addComponent(lblPecasCapPreto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spCemiterioPreto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(spPecasCapPreto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         painelTabuleiro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -236,16 +236,16 @@ public class telaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDesistirJ1;
     private javax.swing.JButton btnDesistirJ2;
-    private javax.swing.JLabel lblCemiterioPreto;
-    private javax.swing.JLabel lblCimiterioBranco;
     private javax.swing.JLabel lblJogador1;
     private javax.swing.JLabel lblJogador2;
+    private javax.swing.JLabel lblPecasCapBranco;
+    private javax.swing.JLabel lblPecasCapPreto;
     private javax.swing.JList<String> listCemiterioBranco;
     private javax.swing.JList<String> listCemiterioPreto;
     private javax.swing.JPanel painelDireito;
     private javax.swing.JPanel painelEsquerdo;
     private javax.swing.JPanel painelTabuleiro;
-    private javax.swing.JScrollPane spCemiterioBranco;
-    private javax.swing.JScrollPane spCemiterioPreto;
+    private javax.swing.JScrollPane spPecasCapBranco;
+    private javax.swing.JScrollPane spPecasCapPreto;
     // End of variables declaration//GEN-END:variables
 }

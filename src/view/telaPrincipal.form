@@ -69,12 +69,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="spCemiterioBranco" max="32767" attributes="0"/>
-              <Component id="lblCimiterioBranco" alignment="0" max="32767" attributes="0"/>
+              <Component id="spPecasCapBranco" max="32767" attributes="0"/>
+              <Component id="lblPecasCapBranco" alignment="0" max="32767" attributes="0"/>
               <Component id="lblJogador1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnDesistirJ1" pref="200" max="32767" attributes="0"/>
+                  <Component id="btnDesistirJ1" pref="212" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -83,18 +83,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="lblJogador1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="246" max="32767" attributes="0"/>
+                  <EmptySpace pref="251" max="32767" attributes="0"/>
                   <Component id="btnDesistirJ1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblCimiterioBranco" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPecasCapBranco" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="spCemiterioBranco" min="-2" max="-2" attributes="0"/>
+                  <Component id="spPecasCapBranco" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="spCemiterioBranco">
+        <Container class="javax.swing.JScrollPane" name="spPecasCapBranco">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
@@ -119,10 +119,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblCimiterioBranco">
+        <Component class="javax.swing.JLabel" name="lblPecasCapBranco">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Cemit&#xe9;rio"/>
+            <Property name="text" type="java.lang.String" value="Pe&#xe7;as Capturadas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblJogador1">
@@ -153,12 +153,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="spCemiterioPreto" max="32767" attributes="0"/>
-              <Component id="lblCemiterioPreto" alignment="0" max="32767" attributes="0"/>
+              <Component id="spPecasCapPreto" max="32767" attributes="0"/>
+              <Component id="lblPecasCapPreto" alignment="0" max="32767" attributes="0"/>
               <Component id="lblJogador2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnDesistirJ2" pref="200" max="32767" attributes="0"/>
+                  <Component id="btnDesistirJ2" pref="212" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -167,18 +167,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="lblJogador2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="246" max="32767" attributes="0"/>
+                  <EmptySpace pref="251" max="32767" attributes="0"/>
                   <Component id="btnDesistirJ2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblCemiterioPreto" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPecasCapPreto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="spCemiterioPreto" min="-2" max="-2" attributes="0"/>
+                  <Component id="spPecasCapPreto" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="spCemiterioPreto">
+        <Container class="javax.swing.JScrollPane" name="spPecasCapPreto">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
@@ -203,10 +203,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblCemiterioPreto">
+        <Component class="javax.swing.JLabel" name="lblPecasCapPreto">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Cemit&#xe9;rio"/>
+            <Property name="text" type="java.lang.String" value="Pe&#xe7;as Capturadas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblJogador2">
