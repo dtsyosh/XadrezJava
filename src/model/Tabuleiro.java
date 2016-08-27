@@ -20,12 +20,12 @@ public class Tabuleiro {
     private int y;
     private int tamanho;
 
-    public Tabuleiro(JFrame frame, int x, int y, int tamanho) {
+    public Tabuleiro(JPanel painel, int x, int y, int tamanho) {
         this.tabuleiro = new JPanel[9][9];
         this.x = x;
         this.y = y;
         this.tamanho = tamanho;
-        criarTabuleiro(frame, x, y, tamanho);
+        criarTabuleiro(painel, x, y, tamanho);
     }
 
     
@@ -62,7 +62,7 @@ public class Tabuleiro {
         return tabuleiro;
     }
 
-    public void criarTabuleiro(JFrame frame, int x, int y, int tamanho) {
+    public void criarTabuleiro(JPanel painel, int x, int y, int tamanho) {
         int auxLinha, auxColuna;
 
         //Variáveis auxiliares que indicam a linha e a coluna do bloco
@@ -80,7 +80,7 @@ public class Tabuleiro {
                     } else {
                         this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
                     }
-                    frame.add(this.tabuleiro[auxLinha][auxColuna]);
+                    painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 } else {
                     this.tabuleiro[auxLinha][auxColuna] = new Campo("branco");
                     this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
@@ -89,13 +89,13 @@ public class Tabuleiro {
                     } else {
                         this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
                     }
-                    frame.add(this.tabuleiro[auxLinha][auxColuna]);
+                    painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 }
                 auxColuna++;
             }
             auxColuna = 1;
             auxLinha++;
         }
-        frame.repaint();
+        painel.repaint();
     }
 }
