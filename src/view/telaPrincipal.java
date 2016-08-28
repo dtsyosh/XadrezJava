@@ -23,6 +23,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     public telaPrincipal() {
         initComponents();
         getContentPane().setBackground(Color.gray);
+        painelDireito.setBackground(new Color(241, 238, 189));
+        painelEsquerdo.setBackground(new Color(241, 238, 189));
         tabuleiroController = new TabuleiroController(painelTabuleiro, 1, 1, 60);
     }
 
@@ -36,17 +38,33 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         painelEsquerdo = new javax.swing.JPanel();
-        spPecasCapBranco = new javax.swing.JScrollPane();
-        listCemiterioBranco = new javax.swing.JList<>();
         lblPecasCapBranco = new javax.swing.JLabel();
         lblJogador1 = new javax.swing.JLabel();
         btnDesistirJ1 = new javax.swing.JButton();
+        lblBispoPreto = new javax.swing.JLabel();
+        lblPeaoPreto = new javax.swing.JLabel();
+        lblTorrePreto = new javax.swing.JLabel();
+        lblRainhaPreto = new javax.swing.JLabel();
+        lblCavaloPreto = new javax.swing.JLabel();
+        lblNPeaoPreto = new javax.swing.JLabel();
+        lblNCavaloPreto = new javax.swing.JLabel();
+        lblNBispoPreto = new javax.swing.JLabel();
+        lblNRainhaPreto = new javax.swing.JLabel();
+        lblNTorrePreto = new javax.swing.JLabel();
         painelDireito = new javax.swing.JPanel();
-        spPecasCapPreto = new javax.swing.JScrollPane();
-        listCemiterioPreto = new javax.swing.JList<>();
         lblPecasCapPreto = new javax.swing.JLabel();
         lblJogador2 = new javax.swing.JLabel();
         btnDesistirJ2 = new javax.swing.JButton();
+        lblNRainhaBranco = new javax.swing.JLabel();
+        lblNTorreBranco = new javax.swing.JLabel();
+        lblTorreBranco = new javax.swing.JLabel();
+        lblRainhaBranco = new javax.swing.JLabel();
+        lblPeaoBranco = new javax.swing.JLabel();
+        lblNPeaoBranco = new javax.swing.JLabel();
+        lblCavaloBranco = new javax.swing.JLabel();
+        lblNCavaloBranco = new javax.swing.JLabel();
+        lblNBispoBranco = new javax.swing.JLabel();
+        lblBispoBranco = new javax.swing.JLabel();
         painelTabuleiro = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,15 +73,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(970, 520));
 
         painelEsquerdo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        painelEsquerdo.setForeground(new java.awt.Color(238, 238, 238));
         painelEsquerdo.setPreferredSize(new java.awt.Dimension(226, 573));
 
-        listCemiterioBranco.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        spPecasCapBranco.setViewportView(listCemiterioBranco);
-
+        lblPecasCapBranco.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblPecasCapBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPecasCapBranco.setText("Peças Capturadas");
 
@@ -72,40 +85,107 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         btnDesistirJ1.setText("Desistir");
 
+        lblBispoPreto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bispopreto.png"))); // NOI18N
+        lblBispoPreto.setText("p");
+
+        lblPeaoPreto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/peaopreto.png"))); // NOI18N
+        lblPeaoPreto.setText("p");
+
+        lblTorrePreto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/torrepreto.png"))); // NOI18N
+
+        lblRainhaPreto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/rainhapreto.png"))); // NOI18N
+
+        lblCavaloPreto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cavalopreto.png"))); // NOI18N
+        lblCavaloPreto.setText("p");
+
+        lblNPeaoPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNPeaoPreto.setText("0");
+
+        lblNCavaloPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNCavaloPreto.setText("0");
+
+        lblNBispoPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNBispoPreto.setText("0");
+
+        lblNRainhaPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNRainhaPreto.setText("0");
+
+        lblNTorrePreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNTorrePreto.setText("0");
+
         javax.swing.GroupLayout painelEsquerdoLayout = new javax.swing.GroupLayout(painelEsquerdo);
         painelEsquerdo.setLayout(painelEsquerdoLayout);
         painelEsquerdoLayout.setHorizontalGroup(
             painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spPecasCapBranco)
-            .addComponent(lblPecasCapBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblJogador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelEsquerdoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnDesistirJ1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDesistirJ1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                    .addComponent(lblPecasCapBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEsquerdoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelEsquerdoLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblNTorrePreto, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNRainhaPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelEsquerdoLayout.createSequentialGroup()
+                        .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTorrePreto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(lblPeaoPreto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelEsquerdoLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblNPeaoPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelEsquerdoLayout.createSequentialGroup()
+                                .addComponent(lblCavaloPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblBispoPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblRainhaPreto)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEsquerdoLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblNCavaloPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblNBispoPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(14, 14, 14))
         );
         painelEsquerdoLayout.setVerticalGroup(
             painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEsquerdoLayout.createSequentialGroup()
                 .addComponent(lblJogador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(btnDesistirJ1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblPecasCapBranco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spPecasCapBranco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBispoPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCavaloPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPeaoPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNPeaoPreto)
+                    .addComponent(lblNCavaloPreto)
+                    .addComponent(lblNBispoPreto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRainhaPreto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTorrePreto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addGroup(painelEsquerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNTorrePreto)
+                    .addComponent(lblNRainhaPreto))
+                .addGap(12, 12, 12))
         );
 
         painelDireito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         painelDireito.setPreferredSize(new java.awt.Dimension(226, 226));
 
-        listCemiterioPreto.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        spPecasCapPreto.setViewportView(listCemiterioPreto);
-
+        lblPecasCapPreto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblPecasCapPreto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPecasCapPreto.setText("Peças Capturadas");
 
@@ -114,28 +194,100 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         btnDesistirJ2.setText("Desistir");
 
+        lblNRainhaBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNRainhaBranco.setText("0");
+
+        lblNTorreBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNTorreBranco.setText("0");
+
+        lblTorreBranco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/torrebranco.png"))); // NOI18N
+
+        lblRainhaBranco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/rainhabranco.png"))); // NOI18N
+
+        lblPeaoBranco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/peaobranco.png"))); // NOI18N
+
+        lblNPeaoBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNPeaoBranco.setText("0");
+
+        lblCavaloBranco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cavalobranco.png"))); // NOI18N
+        lblCavaloBranco.setText("p");
+
+        lblNCavaloBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNCavaloBranco.setText("0");
+
+        lblNBispoBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNBispoBranco.setText("0");
+
+        lblBispoBranco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bispobranco.png"))); // NOI18N
+        lblBispoBranco.setText("p");
+
         javax.swing.GroupLayout painelDireitoLayout = new javax.swing.GroupLayout(painelDireito);
         painelDireito.setLayout(painelDireitoLayout);
         painelDireitoLayout.setHorizontalGroup(
             painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spPecasCapPreto)
-            .addComponent(lblPecasCapPreto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblJogador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDireitoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelDireitoLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblNTorreBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNRainhaBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelDireitoLayout.createSequentialGroup()
+                        .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTorreBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(lblPeaoBranco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelDireitoLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblNPeaoBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelDireitoLayout.createSequentialGroup()
+                                .addComponent(lblCavaloBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblBispoBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblRainhaBranco)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDireitoLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblNCavaloBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblNBispoBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(14, 14, 14))
             .addGroup(painelDireitoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnDesistirJ2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPecasCapPreto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDesistirJ2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
                 .addContainerGap())
         );
         painelDireitoLayout.setVerticalGroup(
             painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDireitoLayout.createSequentialGroup()
                 .addComponent(lblJogador2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addComponent(btnDesistirJ2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblPecasCapPreto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spPecasCapPreto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBispoBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCavaloBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPeaoBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNPeaoBranco)
+                    .addComponent(lblNCavaloBranco)
+                    .addComponent(lblNBispoBranco))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRainhaBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTorreBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addGroup(painelDireitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNTorreBranco)
+                    .addComponent(lblNRainhaBranco))
+                .addGap(17, 17, 17))
         );
 
         painelTabuleiro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -224,6 +376,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -236,16 +394,32 @@ public class telaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDesistirJ1;
     private javax.swing.JButton btnDesistirJ2;
+    private javax.swing.JLabel lblBispoBranco;
+    private javax.swing.JLabel lblBispoPreto;
+    private javax.swing.JLabel lblCavaloBranco;
+    private javax.swing.JLabel lblCavaloPreto;
     private javax.swing.JLabel lblJogador1;
     private javax.swing.JLabel lblJogador2;
+    private javax.swing.JLabel lblNBispoBranco;
+    private javax.swing.JLabel lblNBispoPreto;
+    private javax.swing.JLabel lblNCavaloBranco;
+    private javax.swing.JLabel lblNCavaloPreto;
+    private javax.swing.JLabel lblNPeaoBranco;
+    private javax.swing.JLabel lblNPeaoPreto;
+    private javax.swing.JLabel lblNRainhaBranco;
+    private javax.swing.JLabel lblNRainhaPreto;
+    private javax.swing.JLabel lblNTorreBranco;
+    private javax.swing.JLabel lblNTorrePreto;
+    private javax.swing.JLabel lblPeaoBranco;
+    private javax.swing.JLabel lblPeaoPreto;
     private javax.swing.JLabel lblPecasCapBranco;
     private javax.swing.JLabel lblPecasCapPreto;
-    private javax.swing.JList<String> listCemiterioBranco;
-    private javax.swing.JList<String> listCemiterioPreto;
+    private javax.swing.JLabel lblRainhaBranco;
+    private javax.swing.JLabel lblRainhaPreto;
+    private javax.swing.JLabel lblTorreBranco;
+    private javax.swing.JLabel lblTorrePreto;
     private javax.swing.JPanel painelDireito;
     private javax.swing.JPanel painelEsquerdo;
     private javax.swing.JPanel painelTabuleiro;
-    private javax.swing.JScrollPane spPecasCapBranco;
-    private javax.swing.JScrollPane spPecasCapPreto;
     // End of variables declaration//GEN-END:variables
 }
