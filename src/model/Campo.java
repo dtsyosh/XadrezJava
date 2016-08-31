@@ -1,7 +1,6 @@
 package model;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
@@ -15,6 +14,8 @@ public class Campo extends JPanel {
     public Campo(String cor) {
         this.cor = cor;
         this.peca = null;
+        setSize(60,60);
+        setBackground(new Color(0,0,0,0));
     }
 
 }
