@@ -7,7 +7,8 @@ package view;
 
 import controller.TabuleiroController;
 import java.awt.Color;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import model.Campo;
 
 /**
  *
@@ -19,15 +20,23 @@ public class telaPrincipal extends javax.swing.JFrame {
      * Creates new form Tabuleiro
      */
     TabuleiroController tabuleiroController;
+    JPanel [][] tabuleiroFundo;
 
     public telaPrincipal() {
         initComponents();
         getContentPane().setBackground(Color.gray);
+
+        tabuleiroFundo = new JPanel[9][9];
+
         painelDirSup.setBackground(new Color(241, 238, 189));
         painelEsqInf.setBackground(new Color(241, 238, 189));
         painelDirInf.setBackground(new Color(172, 134, 90));
         painelEsqSup.setBackground(new Color(172, 134, 90));
+        listHistorico.setBackground(new Color(241, 238, 189));
+
         tabuleiroController = new TabuleiroController(painelTabuleiro, 1, 1, 60);
+        painelTabuleiro.setBackground(new Color(0, 0, 0, 0));
+        pintarTabuleiroFrame();
     }
 
     /**
@@ -359,7 +368,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         lblHistorico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHistorico.setText("Histórico de Jogadas");
 
-        listHistorico.setBackground(new java.awt.Color(241, 248, 189));
         listHistorico.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -437,6 +445,47 @@ public class telaPrincipal extends javax.swing.JFrame {
         int linha = ((y - tabY) / tamanho) + 1;     //Pega a linha clicada
         System.out.printf("matriz[%d][%d]\n", linha, coluna);
     }//GEN-LAST:event_painelTabuleiroMouseClicked
+
+    private void pintarTabuleiroFrame() {
+        int auxLinha, auxColuna;
+        int tamanho = 60;
+        int x, y;
+
+        //Variáveis auxiliares que indicam a linha e a coluna do bloco
+        auxLinha = auxColuna = 1;
+        //Variaveis que indicam o ponto inicial de onde o tabuleiro deve ser criado
+        x = 239;
+        y = 6;
+        for (int linha = 0; linha < tamanho * 8; linha += tamanho) {
+            for (int coluna = 0; coluna < tamanho * 8; coluna += tamanho) {
+                tabuleiroFundo[auxLinha][auxColuna] = new JPanel();
+                if (auxLinha % 2 == 0) {   //Se a linha for impar, primeiro campo é preto
+                    //Define tamanho dos blocos e sua localização
+                    tabuleiroFundo[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    if (auxColuna % 2 == 0) {
+                        tabuleiroFundo[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
+                    } else {
+                        tabuleiroFundo[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
+                    }
+
+                    add(tabuleiroFundo[auxLinha][auxColuna]);
+                } else {
+                    tabuleiroFundo[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    if (auxColuna % 2 == 0) {
+                        tabuleiroFundo[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
+                    } else {
+                        tabuleiroFundo[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
+                    }
+                    
+                    add(tabuleiroFundo[auxLinha][auxColuna]);
+                }
+                auxColuna++;
+            }
+            auxColuna = 1;
+            auxLinha++;
+        }
+        repaint();
+    }
 
     /**
      * @param args the command line arguments
