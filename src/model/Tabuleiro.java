@@ -75,20 +75,12 @@ public class Tabuleiro {
                     this.tabuleiro[auxLinha][auxColuna] = new Campo("preto");
                     //Define tamanho dos blocos e sua localização
                     this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
-                    if (auxColuna % 2 == 0) {
-                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
-                    } else {
-                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
-                    }
+
                     painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 } else {
                     this.tabuleiro[auxLinha][auxColuna] = new Campo("branco");
                     this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
-                    if (auxColuna % 2 == 0) {
-                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(172, 134, 90));
-                    } else {
-                        this.tabuleiro[auxLinha][auxColuna].setBackground(new Color(241, 238, 189));
-                    }
+
                     painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 }
                 auxColuna++;
