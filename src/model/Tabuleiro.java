@@ -74,12 +74,12 @@ public class Tabuleiro {
                 if (auxLinha % 2 == 0) {   //Se a linha for impar, primeiro campo é preto
                     this.tabuleiro[auxLinha][auxColuna] = new Campo("preto");
                     //Define tamanho dos blocos e sua localização
-                    this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    this.tabuleiro[auxLinha][auxColuna].setBounds(coluna + x, linha + y, tamanho, tamanho);
 
                     painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 } else {
                     this.tabuleiro[auxLinha][auxColuna] = new Campo("branco");
-                    this.tabuleiro[auxLinha][auxColuna].setBounds(linha + x, coluna + y, tamanho, tamanho);
+                    this.tabuleiro[auxLinha][auxColuna].setBounds(coluna + x, linha + y, tamanho, tamanho);
 
                     painel.add(this.tabuleiro[auxLinha][auxColuna]);
                 }
