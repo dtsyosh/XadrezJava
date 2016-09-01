@@ -435,11 +435,11 @@ public class telaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void painelTabuleiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelTabuleiroMouseClicked
-        int tabX = tabuleiroController.getTabuleiro().getX();   //Coordenada de criação do tabuleiro
-        int tabY = tabuleiroController.getTabuleiro().getY();   //Coordenada de criação do tabuleiro
+        int tabX = tabuleiroController.getTabuleiroInfo().getX();   //Coordenada de criação do tabuleiro
+        int tabY = tabuleiroController.getTabuleiroInfo().getY();   //Coordenada de criação do tabuleiro
         int x = evt.getX();
         int y = evt.getY();
-        int tamanho = tabuleiroController.getTabuleiro().getTamanho();
+        int tamanho = tabuleiroController.getTabuleiroInfo().getTamanho();
 
         int coluna = ((x - tabX) / tamanho) + 1;    //Pega a coluna clicada
         int linha = ((y - tabY) / tamanho) + 1;     //Pega a linha clicada
