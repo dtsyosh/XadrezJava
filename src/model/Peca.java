@@ -51,6 +51,46 @@ public abstract class Peca {
         
     }
 
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public boolean isMovimentada() {
+        return movimentada;
+    }
+
+    public void setMovimentada(boolean movimentada) {
+        this.movimentada = movimentada;
+    }
+
+    public String getFigura() {
+        return figura;
+    }
+
+    public void setFigura(String figura) {
+        this.figura = figura;
+    }
+
     public BufferedImage getImagem() {
         return imagem;
     }
