@@ -15,13 +15,13 @@ import javax.swing.JPanel;
  */
 public class Tabuleiro {
 
-    private JPanel tabuleiro[][];
+    private Campo tabuleiro[][];
     private int x;
     private int y;
     private int tamanho;
 
     public Tabuleiro(JPanel painel, int x, int y, int tamanho) {
-        this.tabuleiro = new JPanel[9][9];
+        this.tabuleiro = new Campo[9][9];
         this.x = x;
         this.y = y;
         this.tamanho = tamanho;
