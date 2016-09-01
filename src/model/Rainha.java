@@ -5,10 +5,16 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author nadson.silva
  */
 public class Rainha extends Peca {
     
+    public Rainha(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
+   
 }

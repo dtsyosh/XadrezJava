@@ -5,15 +5,22 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author nadson.silva
  */
 public class Torre extends Peca {
+
+    public Torre(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
     
     
     
     void efetuarRoque() {
         
     }
+    
 }

@@ -5,10 +5,18 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author nadson.silva
  */
 public class Cavalo extends Peca{
+    
+    public Cavalo(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
+    
+    
     
 }

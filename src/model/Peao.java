@@ -5,14 +5,22 @@
  */
 package model;
 
+import java.awt.Color;
+import java.io.IOException;
+import javax.swing.JPanel;
+
 /**
  *
  * @author nadson.silva
  */
 public class Peao extends Peca {
+
+    public Peao(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
     
     void promover() {
         
     }
-
+    
 }

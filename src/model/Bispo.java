@@ -5,11 +5,18 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author nadson.silva
  */
 public class Bispo extends Peca {
+    
+    public Bispo(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
+    
     
     
 }

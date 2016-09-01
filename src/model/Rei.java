@@ -5,11 +5,17 @@
  */
 package model;
 
+import java.io.IOException;
+
 /**
  *
  * @author nadson.silva
  */
 public class Rei extends Peca{
+
+    public Rei(String cor, String figura) throws IOException {
+        super(cor, figura);
+    }
     
     
     
@@ -19,4 +25,5 @@ public class Rei extends Peca{
     }
     
     //void Xeque
+  
 }
