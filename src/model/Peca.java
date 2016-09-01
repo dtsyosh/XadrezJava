@@ -10,5 +10,19 @@ package model;
  * @author yosh
  */
 public class Peca {
+    private String cor;
+    private int posicao;
+    private boolean ativo;
+    private boolean movimentada;
+    private String figura;
+    
+    
+    void capturarPeça() {
+    
+    }
+    
+    void validarMovimento() {
+        
+    }
     
 }
