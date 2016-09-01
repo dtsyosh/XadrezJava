@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Rei extends Peca{
 
-    public Rei(String cor, String figura) throws IOException {
+    public Rei(String cor, String figura) {
         super(cor, figura);
     }
     

@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Rainha extends Peca {
     
-    public Rainha(String cor, String figura) throws IOException {
+    public Rainha(String cor, String figura) {
         super(cor, figura);
     }
    

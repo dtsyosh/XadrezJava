@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  */
 public class Peao extends Peca {
 
-    public Peao(String cor, String figura) throws IOException {
+    public Peao(String cor, String figura) {
         super(cor, figura);
     }
     

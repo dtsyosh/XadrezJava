@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Torre extends Peca {
 
-    public Torre(String cor, String figura) throws IOException {
+    public Torre(String cor, String figura) {
         super(cor, figura);
     }
     

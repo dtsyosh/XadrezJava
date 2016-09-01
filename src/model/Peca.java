@@ -8,6 +8,8 @@ package model;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
@@ -23,10 +25,14 @@ public abstract class Peca {
     private String figura; // tudo minusculo
     private BufferedImage imagem;
 
-    public Peca(String cor, String figura) throws IOException {
+    public Peca(String figura, String cor) {
         this.cor = cor;
         this.figura = figura;
-        this.imagem = ImageIO.read(getClass().getResource("/imagens/" + this.figura + this.cor + ".png"));
+        try {
+            this.imagem = ImageIO.read(getClass().getResource("/imagens/" + this.figura + this.cor + ".png"));
+        } catch (IOException ex) {
+            Logger.getLogger(Peca.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     Peca capturarPeça(Peca p, int M[][]) {
@@ -44,6 +50,15 @@ public abstract class Peca {
         }
         
     }
+
+    public BufferedImage getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(BufferedImage imagem) {
+        this.imagem = imagem;
+    }
+    
     
     
 }
