@@ -19,7 +19,8 @@ import javax.swing.JPanel;
  */
 public abstract class Peca {
     private String cor; // preto ou branco
-    private int posicao;
+    private int linha;
+    private int coluna;
     private boolean ativo;
     private boolean movimentada;
     private String figura; // tudo minusculo
@@ -34,21 +35,29 @@ public abstract class Peca {
             Logger.getLogger(Peca.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     Peca capturarPeça(Peca p, int M[][]) {
-        
+
         return p;
     }
-    
-    public boolean validarMovimento(JPanel tabuleiro[][], int linha, int coluna){
-        
-        if (tabuleiro[linha][coluna].getBackground() == new Color (194,192,69,100)) {
-            return true;
+
+    public void movimento(Peca p, Campo[][] tabuleiro, int linha, int coluna) {
+
+        if (validarMovimento(tabuleiro, linha, coluna)) {
+            tabuleiro[linha][coluna].setPeca(p);
+            p.setColuna(coluna);
+            p.setLinha(linha);
         }
-        else {
+    }
+
+    public boolean validarMovimento(JPanel tabuleiro[][], int linha, int coluna) {
+
+        if (tabuleiro[linha][coluna].getBackground() == new Color(194, 192, 69, 100)) {
+            return true;
+        } else {
             return false;
         }
-        
+
     }
 
     public String getCor() {
@@ -59,12 +68,20 @@ public abstract class Peca {
         this.cor = cor;
     }
 
-    public int getPosicao() {
-        return posicao;
+    public int getLinha() {
+        return linha;
     }
 
-    public void setPosicao(int posicao) {
-        this.posicao = posicao;
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
     }
 
     public boolean isAtivo() {
@@ -98,7 +115,5 @@ public abstract class Peca {
     public void setImagem(BufferedImage imagem) {
         this.imagem = imagem;
     }
-    
-    
-    
+
 }

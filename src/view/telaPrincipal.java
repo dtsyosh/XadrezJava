@@ -5,10 +5,10 @@
  */
 package view;
 
+import controller.PecaController;
 import controller.TabuleiroController;
 import java.awt.Color;
 import javax.swing.JPanel;
-import model.Campo;
 
 /**
  *
@@ -21,7 +21,8 @@ public class telaPrincipal extends javax.swing.JFrame {
      */
     TabuleiroController tabuleiroController;
     JPanel [][] tabuleiroFundo;
-
+    PecaController pecaController;
+    
     public telaPrincipal() {
         initComponents();
         getContentPane().setBackground(Color.gray);
@@ -443,6 +444,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         int coluna = ((x - tabX) / tamanho) + 1;    //Pega a coluna clicada
         int linha = ((y - tabY) / tamanho) + 1;     //Pega a linha clicada
+        
+        pecaController.movimento(tabuleiroController.getTabuleiro()[linha][coluna].getPeca(),linha,coluna);
+        
         System.out.printf("matriz[%d][%d]\n", linha, coluna);
     }//GEN-LAST:event_painelTabuleiroMouseClicked
 
@@ -526,7 +530,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             public void run() {
                 new telaPrincipal().setVisible(true);
             }
-        });
+        });      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
